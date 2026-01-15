@@ -1,0 +1,79 @@
+{
+  "name": "@prodestic/fne-sdk-js",
+  "version": "1.0.0",
+  "description": "SDK JavaScript/TypeScript pour l'API FNE (Facture Normalisée Électronique) de la DGI Côte d'Ivoire",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "fne",
+    "dgi",
+    "cote-divoire",
+    "ivory-coast",
+    "facture",
+    "invoice",
+    "electronic-invoice",
+    "tax",
+    "api",
+    "sdk"
+  ],
+  "author": "Prodestic <a.niando@prodestic.net>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prodestic/fne-sdk-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prodestic/fne-sdk-js/issues"
+  },
+  "homepage": "https://github.com/prodestic/fne-sdk-js#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/qrcode": "^1.5.6",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.3"
+  },
+  "peerDependencies": {
+    "@types/qrcode": "^1.5.5"
+  },
+  "peerDependenciesMeta": {
+    "@types/qrcode": {
+      "optional": true
+    }
+  }
+}
